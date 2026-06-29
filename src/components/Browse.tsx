@@ -38,7 +38,7 @@ export default function Browse() {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="搜尋英文或中文…"
-        className="mt-3 w-full rounded-2xl bg-white/8 px-4 py-3 outline-none ring-1 ring-white/10 focus:ring-cyan-400/60"
+        className="mt-3 w-full rounded-2xl bg-slate-100 px-4 py-3 outline-none ring-1 ring-slate-200 focus:ring-cyan-400/60"
       />
       <div className="no-scrollbar mt-3 flex gap-2 overflow-x-auto">
         {filters.map((f) => (
@@ -47,8 +47,8 @@ export default function Browse() {
             onClick={() => setFilter(f.id)}
             className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-semibold ring-1 transition ${
               filter === f.id
-                ? "bg-cyan-500 text-slate-900 ring-cyan-400"
-                : "bg-white/5 text-slate-300 ring-white/10"
+                ? "bg-cyan-500 text-white ring-cyan-400"
+                : "bg-slate-100 text-slate-600 ring-slate-200"
             }`}
           >
             {f.label}
@@ -64,28 +64,28 @@ export default function Browse() {
             <button
               key={w.id}
               onClick={() => speak(w.w)}
-              className="flex w-full items-center gap-3 rounded-2xl bg-white/[0.05] px-4 py-3 text-left ring-1 ring-white/10"
+              className="flex w-full items-center gap-3 rounded-2xl bg-white px-4 py-3 text-left ring-1 ring-slate-200"
             >
               <div className="flex-1">
                 <div className="flex items-center gap-2">
                   <span className="text-lg font-bold">{w.w}</span>
-                  <span className="text-xs text-slate-500">{w.pos}</span>
+                  <span className="text-xs text-slate-400">{w.pos}</span>
                   {w.lvl === 2 && (
-                    <span className="rounded bg-fuchsia-400/15 px-1.5 text-[10px] font-semibold text-fuchsia-300">
+                    <span className="rounded bg-fuchsia-400/15 px-1.5 text-[10px] font-semibold text-fuchsia-600">
                       進階
                     </span>
                   )}
                 </div>
-                <div className="text-sm text-slate-300">{w.zh}</div>
+                <div className="text-sm text-slate-600">{w.zh}</div>
               </div>
               <span className="text-lg">{status}</span>
-              <span className="text-slate-500">🔊</span>
+              <span className="text-slate-400">🔊</span>
             </button>
           );
         })}
-        {list.length === 0 && <p className="px-1 py-8 text-center text-slate-500">找不到符合的單字</p>}
+        {list.length === 0 && <p className="px-1 py-8 text-center text-slate-400">找不到符合的單字</p>}
         {list.length >= 400 && (
-          <p className="px-1 py-3 text-center text-xs text-slate-500">只顯示前 400 筆，輸入關鍵字縮小範圍</p>
+          <p className="px-1 py-3 text-center text-xs text-slate-400">只顯示前 400 筆，輸入關鍵字縮小範圍</p>
         )}
       </div>
     </div>

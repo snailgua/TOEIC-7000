@@ -9,7 +9,7 @@ const TABS: { id: Tab; label: string; emoji: string }[] = [
 
 export default function BottomNav({ tab, onTab }: { tab: Tab; onTab: (t: Tab) => void }) {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#0b1020]/90 backdrop-blur-lg">
+    <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/90 backdrop-blur-lg">
       <div className="mx-auto grid max-w-md grid-cols-4 pb-[env(safe-area-inset-bottom)]">
         {TABS.map((t) => {
           const active = tab === t.id;
@@ -18,7 +18,7 @@ export default function BottomNav({ tab, onTab }: { tab: Tab; onTab: (t: Tab) =>
               key={t.id}
               onClick={() => onTab(t.id)}
               className={`flex flex-col items-center gap-0.5 py-2.5 text-xs font-semibold transition ${
-                active ? "text-cyan-300" : "text-slate-500"
+                active ? "text-cyan-600" : "text-slate-400"
               }`}
             >
               <span className={`text-xl transition ${active ? "scale-110" : ""}`}>{t.emoji}</span>

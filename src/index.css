@@ -9,7 +9,7 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html,
@@ -21,10 +21,10 @@ body,
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 600px at 50% -10%, #1e2a52 0%, transparent 60%),
-    linear-gradient(180deg, #0b1020 0%, #0a0e1c 100%);
+    radial-gradient(1100px 560px at 50% -12%, #e0f2fe 0%, transparent 62%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
   background-attachment: fixed;
-  color: #e7ecf5;
+  color: #1e293b;
   font-family: var(--font-sans);
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior-y: none;

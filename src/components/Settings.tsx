@@ -61,7 +61,7 @@ export default function Settings() {
         <div className="px-4 py-3">
           <div className="flex items-center justify-between">
             <span className="font-semibold">每天新單字</span>
-            <span className="text-lg font-extrabold text-cyan-300">{perDay} 字</span>
+            <span className="text-lg font-extrabold text-cyan-600">{perDay} 字</span>
           </div>
           <input
             type="range"
@@ -72,8 +72,8 @@ export default function Settings() {
             onChange={(e) => setSettings({ dailyNew: Number(e.target.value) })}
             className="mt-3 w-full accent-cyan-400"
           />
-          <div className="mt-1 text-xs text-slate-400">
-            照這個速度約 <span className="font-bold text-slate-200">{finishDays} 天</span> 學完全部 {TOTAL.toLocaleString()} 字
+          <div className="mt-1 text-xs text-slate-500">
+            照這個速度約 <span className="font-bold text-slate-700">{finishDays} 天</span> 學完全部 {TOTAL.toLocaleString()} 字
             （預設一個月約 {Math.ceil(TOTAL / 30)} 字／天）
           </div>
         </div>
@@ -83,7 +83,7 @@ export default function Settings() {
         <button onClick={doExport} className="w-full px-4 py-3.5 text-left font-semibold">
           📤 匯出進度檔
         </button>
-        <div className="border-t border-white/5" />
+        <div className="border-t border-slate-200" />
         <button
           onClick={() => fileRef.current?.click()}
           className="w-full px-4 py-3.5 text-left font-semibold"
@@ -93,7 +93,7 @@ export default function Settings() {
         <input ref={fileRef} type="file" accept="application/json" onChange={onImport} className="hidden" />
       </Section>
 
-      {msg && <p className="mt-3 px-1 text-sm text-emerald-300">{msg}</p>}
+      {msg && <p className="mt-3 px-1 text-sm text-emerald-600">{msg}</p>}
 
       <Section title="危險區">
         <button
@@ -103,13 +103,13 @@ export default function Settings() {
               setMsg("已重設所有進度");
             }
           }}
-          className="w-full px-4 py-3.5 text-left font-semibold text-rose-300"
+          className="w-full px-4 py-3.5 text-left font-semibold text-rose-600"
         >
           🗑️ 重設所有進度
         </button>
       </Section>
 
-      <p className="mt-6 px-1 text-xs leading-relaxed text-slate-500">
+      <p className="mt-6 px-1 text-xs leading-relaxed text-slate-400">
         單字資料來源：台灣大考中心高中英文參考詞彙表（學測 4000＋指考 7000），共 {TOTAL.toLocaleString()} 個去重單字，
         含詞性與中文釋義，僅供學習用途。進度儲存在此裝置瀏覽器；換裝置請用上方匯出／匯入。
       </p>
@@ -120,8 +120,8 @@ export default function Settings() {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="mt-5">
-      <div className="mb-2 px-1 text-sm font-bold text-slate-300">{title}</div>
-      <div className="divide-y divide-white/5 overflow-hidden rounded-2xl bg-white/[0.05] ring-1 ring-white/10">
+      <div className="mb-2 px-1 text-sm font-bold text-slate-600">{title}</div>
+      <div className="divide-y divide-slate-200 overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200">
         {children}
       </div>
     </div>
@@ -143,9 +143,9 @@ function Toggle({
     <button onClick={() => onChange(!on)} className="flex w-full items-center justify-between px-4 py-3.5 text-left">
       <div>
         <div className="font-semibold">{label}</div>
-        <div className="text-xs text-slate-400">{desc}</div>
+        <div className="text-xs text-slate-500">{desc}</div>
       </div>
-      <div className={`relative h-7 w-12 rounded-full transition ${on ? "bg-cyan-500" : "bg-white/15"}`}>
+      <div className={`relative h-7 w-12 rounded-full transition ${on ? "bg-cyan-500" : "bg-slate-200"}`}>
         <div
           className={`absolute top-0.5 h-6 w-6 rounded-full bg-white transition ${on ? "left-[1.4rem]" : "left-0.5"}`}
         />
