@@ -1,0 +1,19 @@
+{
+  "name": "多益 7000・單字衝刺",
+  "short_name": "多益7000",
+  "description": "一個月刷完多益 7000 單字的遊戲化間隔複習 App",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
